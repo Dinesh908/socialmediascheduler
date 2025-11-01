@@ -142,6 +142,38 @@ social-media-scheduler/
 └── README.md
 ```
 
+## Deployment
+
+The application is ready for deployment! See `DEPLOYMENT.md` for detailed deployment instructions.
+
+### Quick Deploy
+
+1. **Build the frontend**:
+   ```bash
+   npm run build
+   ```
+
+2. **Set environment variables**:
+   ```bash
+   NODE_ENV=production
+   PORT=5000
+   ```
+
+3. **Start production server**:
+   ```bash
+   npm start
+   ```
+
+### Deploy to Heroku
+
+1. Create Heroku app: `heroku create your-app-name`
+2. Set environment: `heroku config:set NODE_ENV=production`
+3. Deploy: `git push heroku main`
+
+The `Procfile` is already configured!
+
+For other platforms (Vercel, Railway, Render, etc.), see `DEPLOYMENT.md`.
+
 ## Future Enhancements
 
 - Real-time post publishing integration with social media APIs
@@ -156,3 +188,4 @@ social-media-scheduler/
 
 MIT
 # social-media-scheduler12
+# social-media-scheduler2
