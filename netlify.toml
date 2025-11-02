@@ -1,0 +1,53 @@
+[build]
+  # Base directory for the build
+  base = "."
+  
+  # Build command
+  command = "npm run netlify-build"
+  
+  # Publish directory (where Netlify serves files from)
+  publish = "client/build"
+
+# Redirects for Single Page Application (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API proxy (if backend is deployed separately)
+# Uncomment and update if you deploy backend to Render/Railway/Heroku
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://your-backend-url.com/api/:splat"
+#   status = 200
+#   force = true
+
+# Headers for security and caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variables (set these in Netlify dashboard)
+# [build.environment]
+#   NODE_VERSION = "18.17.0"
+#   REACT_APP_API_URL = "/api"
+

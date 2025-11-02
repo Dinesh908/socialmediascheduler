@@ -144,9 +144,31 @@ social-media-scheduler/
 
 ## Deployment
 
-The application is ready for deployment! See `DEPLOYMENT.md` for detailed deployment instructions.
+The application is ready for deployment! Multiple deployment options are available.
 
-### Quick Deploy
+### 🚀 Netlify Deployment (Recommended - Easiest)
+
+**Quick Start:** See [NETLIFY_QUICK_START.md](./NETLIFY_QUICK_START.md) for 5-minute deployment.
+
+**Full Guide:** See [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) for detailed instructions.
+
+1. Push to GitHub
+2. Connect to Netlify (auto-detects settings from `netlify.toml`)
+3. Deploy backend to Render/Railway
+4. Set environment variables
+5. Done! 🎉
+
+Auto-deploy is configured - every push to `main` branch automatically deploys!
+
+### Other Deployment Options
+
+See `DEPLOYMENT.md` for:
+- Heroku deployment
+- Vercel deployment  
+- Railway/Render deployment
+- Self-hosted options
+
+### Quick Deploy (Manual)
 
 1. **Build the frontend**:
    ```bash
@@ -163,16 +185,6 @@ The application is ready for deployment! See `DEPLOYMENT.md` for detailed deploy
    ```bash
    npm start
    ```
-
-### Deploy to Heroku
-
-1. Create Heroku app: `heroku create your-app-name`
-2. Set environment: `heroku config:set NODE_ENV=production`
-3. Deploy: `git push heroku main`
-
-The `Procfile` is already configured!
-
-For other platforms (Vercel, Railway, Render, etc.), see `DEPLOYMENT.md`.
 
 ## Future Enhancements
 
